@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "258549870093",
+    "project_id": "carsbazar-5aa00",
+    "storage_bucket": "carsbazar-5aa00.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258549870093:android:4ab167e501bd02f1f9ef44",
+        "android_client_info": {
+          "package_name": "com.carzbazzar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIoMCG-LQ9qsCFU3rb-0rKsFRwsURAPds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

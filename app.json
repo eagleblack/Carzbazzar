@@ -1,4 +1,7 @@
 {
   "name": "carzbazzar",
-  "displayName": "carzbazzar"
+  "displayName": "carzbazzar",
+  "plugins": [
+    "expo-asset"
+  ]
 }
