@@ -1,28 +1,32 @@
 package com.carzbazzar
 
 import android.os.Bundle
+import androidx.core.view.WindowCompat
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
-import expo.modules.ReactActivityDelegateWrapper
-import org.devio.rn.splashscreen.SplashScreen  // Uncomment if using react-native-splash-screen
+import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
+import org.devio.rn.splashscreen.SplashScreen
 
 class MainActivity : ReactActivity() {
 
     override fun getMainComponentName(): String = "carzbazzar"
 
-    override fun createReactActivityDelegate(): ReactActivityDelegate {
-        return ReactActivityDelegateWrapper(
+      override fun createReactActivityDelegate(): ReactActivityDelegate {
+        return DefaultReactActivityDelegate(
             this,
-            BuildConfig.IS_NEW_ARCHITECTURE_ENABLED,
-            DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+            mainComponentName,
+            fabricEnabled
         )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // If using react-native-splash-screen:
-         SplashScreen.show(this)
-        super.onCreate(savedInstanceState)
+        SplashScreen.show(this)
+
+        // ✅ Fix splash freeze on OnePlus / OPPO / Vivo:
+        super.onCreate(null)
+
+        // ✅ Enable real edge-to-edge layout (Fixes clipping in gesture navigation):
+        WindowCompat.setDecorFitsSystemWindows(window, false)
     }
 }
